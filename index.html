@@ -1195,26 +1195,19 @@
 }
 /* Мобильные устройства (≤768px) */
 @media (max-width: 768px) {
-  /* Исправляем блоки со специализацией и марками авто */
+  /* Находим контейнер с grid-cols-2 и меняем на одну колонку */
   #about .grid-cols-2 {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
+    display: block !important;
   }
 
   #about .grid-cols-2 > div {
     width: 100% !important;
+    margin-bottom: 12px !important;
     padding: 16px !important;
   }
 
-  /* Уменьшаем шрифт внутри этих блоков */
-  #about .grid-cols-2 div[style*="font-size:calc(13px"] {
-    font-size: calc(12px * var(--fs-mul)) !important;
-    line-height: 1.5 !important;
-  }
-
-  #about .grid-cols-2 div[style*="font-size:calc(11px"] {
-    font-size: calc(9px * var(--fs-mul)) !important;
+  #about .grid-cols-2 > div:last-child {
+    margin-bottom: 0 !important;
   }
 }
   </style>
